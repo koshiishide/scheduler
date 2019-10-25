@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}だんたいとうろくふぉーむ{% endblock title %}
+{% block content %}
+<form method="POST" action="{% url 'scheduler:makeuser' %}">
+  {% csrf_token %}
+  <div>
+    <label for="display_name">学籍番号</label>
+      <input type="text" class="form-control" name="school_number" placeholder="display name">
+  </div>
+  <div>
+    <label for="password">password</label>
+      <input type="text" class="form-control" name="password" placeholder="display name">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}てすとふぉーむ{% endblock title %}
+{% block content %}
+<form method="POST" action="{%url 'scheduler:execute'%}">
+  {% csrf_token %}
+  <div class="form-group">
+    <div class="mx-auto" style="width: 200px;">
+    <label>Org ID
+      <input type="text" size="20" class="form-control" name="team_id" placeholder="custom team id">
+    </label>
+    <br>
+    <label>Student ID
+      <input type="text" size="20" class="form-control" name="student_id" placeholder="student id">
+    </label>
+    <label>Password (ToyoNet-G)
+      <input type="password" size="20" class="form-control" name="password">
+    </label>
+    <label>Display Name
+      <input type="text" size="20" class="form-control" name="display_name" placeholder="custom display name">
+    </label>
+    <label>User Name
+      <input type="text" size="20" class="form-control" name="username" placeholder="custom display name">
+    </label>
+    <br>
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

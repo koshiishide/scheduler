@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}だんたいとうろくふぉーむ{% endblock title %}
+{% block content %}
+<form method="POST" action="{% url 'scheduler:makeorg' %}" class="all">
+  {% csrf_token %}
+  <div class="form-group">
+    <div class="mx-auto" style="width: 200px;">
+    <label>TEAM ID
+      <input type="text" size="20" class="form-control" name="team_id" placeholder="custom team id">
+    </label>
+    <br>
+    <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
